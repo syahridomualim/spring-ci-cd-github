@@ -14,8 +14,8 @@
     <name>spring-ci-cd-github</name>
     <description>spring-ci-cd-github</description>
     <properties>
-        <java.version>11</java.version>
-        <kotlin.version>1.7.22</kotlin.version>
+        <java.version>17</java.version>
+        <kotlin.version>1.8.0</kotlin.version>
     </properties>
     <dependencies>
         <dependency>
@@ -57,10 +57,10 @@
                     <args>
                         <arg>-Xjsr305=strict</arg>
                     </args>
-                    <jvmTarget>11</jvmTarget>
                     <compilerPlugins>
                         <plugin>spring</plugin>
                     </compilerPlugins>
+                    <jvmTarget>17</jvmTarget>
                 </configuration>
                 <dependencies>
                     <dependency>
