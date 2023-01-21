@@ -1,4 +1,13 @@
-FROM openjdk:17
-EXPOSE 8080
-ADD target/springboot-images.jar springboot-images.jar
-ENTRYPOINT ["java","-jar","/springboot-images.jar"]
+FROM eclipse-temurin:17-jdk-focal
+
+EXPOSE 8082
+
+WORKDIR /app
+ 
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN ./mvnw dependency:go-offline
+ 
+COPY src ./src
+ 
+CMD ["./mvnw", "spring-boot:run"]
