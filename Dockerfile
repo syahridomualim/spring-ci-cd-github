@@ -1,12 +1,7 @@
 FROM eclipse-temurin:17-jdk-focal
 
-EXPOSE 8082
+EXPOSE 8080
 
-WORKDIR /app
- 
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
- 
-COPY src ./src
- 
-CMD ["./mvnw", "spring-boot:run"]
+ADD target//springboot-cicd.jar /springboot-cicd.jar
+
+ENTRYPOINT ["java","-jar","/springboot-cicd.jar.jar"]
