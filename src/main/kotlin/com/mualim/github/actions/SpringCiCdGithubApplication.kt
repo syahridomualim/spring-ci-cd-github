@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 class SpringCiCdGithubApplication {
     @GetMapping("/welcome")
     fun welcome(): String = "Welcome to the Spring"
+    fun hello(): String = "Hello"
 }
 
 fun main(args: Array<String>) {
